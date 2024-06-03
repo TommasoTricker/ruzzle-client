@@ -219,10 +219,6 @@ LRESULT CALLBACK WindowProc(HWND wnd, UINT msg, WPARAM wparam, LPARAM lparam)
 
             SelectObject(dc, word_view_font);
 
-            char word[word_length];
-            ZeroMemory(word, word_length);
-            strcpy(word, word);
-
             GetTextExtentPoint32(dc, word, strlen(word), &text_size);
 
             TextOut(dc, PADDING_SIZE + WORD_VIEW_WIDTH / 2 - text_size.cx / 2, WORD_VIEW_Y + WORD_VIEW_HEIGHT / 2 - text_size.cy / 2, word, word_length);
